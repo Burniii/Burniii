@@ -151,7 +151,7 @@ Lizenzen: Quaternius/Kenney/Poly Haven CC0 · three.js, three.quarks, ZzFX, Tone
 - [x] HD-2D-artiges Konzept und Recherche (`docs/01-hd2d-konzept.md`)
 - [x] Diorama-Probe (`prototypes/diorama-probe.html`) – nur syntaxgeprüft, im Browser noch nicht vom Nutzer bestätigt
 - [x] Tool-Recherche (`docs/02-qualitaets-boost-tools.md`)
-- [ ] **Projekt aufsetzen:** Vite + three.js + Capacitor, Diorama-Probe in Module zerlegen (scene, terrain, sprites, combat, fx, ui, audio, quality)
+- [x] **Projekt aufsetzen:** Vite + three.js, Diorama-Probe in Module zerlegt (scene, terrain, sprites, combat, fx, ui, audio, quality) – per Headless-Vergleich in 10 Szenarien pixelgleich zum Prototyp. Capacitor folgt mit dem APK-Schritt.
 - [ ] Sounds (ZzFX) und Partikel (three.quarks) einbauen
 - [ ] Machbarkeitstest 3D-zu-Pixel mit einem Quaternius-Modell
 - [ ] Hauptpalette + Style Guide festschreiben (Sprite-Größen z. B. 16/24/32 bzw. 48 px für 3D-Quellen)
@@ -160,6 +160,14 @@ Lizenzen: Quaternius/Kenney/Poly Haven CC0 · three.js, three.quarks, ZzFX, Tone
 - [ ] Generative Musik, Arenen-Generator
 - [ ] Leistungstest auf dem Android-Gerät des Nutzers, Qualitätsstufen justieren
 - [ ] APK-Build via Capacitor
+
+## 8a. Technische Festlegungen beim Aufsetzen
+
+- Projekt liegt im Unterordner `creature-idle/` des Repos (Repo-Wurzel ist das GitHub-Profil-README).
+- Schrift Pixelify Sans lokal über `@fontsource/pixelify-sans` statt Google-Fonts-Link (offline-fähig für die APK).
+- Vite `base: './'` (relative Pfade für Capacitor).
+- `src/combat.js` enthält Kampflogik ohne three.js/DOM; Darstellung über Callbacks und Posen.
+- `prototypes/` bleibt unverändert als Referenz.
 
 ## 9. Offene Fragen an den Nutzer
 
